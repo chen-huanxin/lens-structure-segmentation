@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from blocks import ConvBnRelu2d, StackEncoder, StackDecoder
+from networks.blocks import ConvBnRelu2d, StackEncoder, StackDecoder
 
 # 1024*1024
 class UNet1024(nn.Module):

@@ -361,8 +361,7 @@ class LevelSet_Loss(object):
         
         #AllLoss = self.lambda_1 * Loss_item1 + self.lambda_2 * Loss_item2 + self.lambda_3 * loss_item3 + #self.Lamda_LevelSetDifference * loss_Item4
         
-        # AllLoss = (1-self.lambda_1) * Loss_item1 + self.lambda_1 * loss_Item4 + self.lambda_2 * loss_Item5
-        AllLoss = self.lambda_2 * loss_Item5 # 这里好像是后面做了消融实验？？？
+        AllLoss = (1-self.lambda_1) * Loss_item1 + self.lambda_1 * loss_Item4 + self.lambda_2 * loss_Item5
         
         print('All loss = %f' % AllLoss.data.cpu().numpy())
         return AllLoss

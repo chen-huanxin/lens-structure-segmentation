@@ -59,7 +59,7 @@ def parse_args():
             '-m',
             type=str,
             default='Proposed',
-            choices=['Proposed', 'UNet'],
+            choices=['Proposed', 'Baseline'],
             help='use method',
     )
 
