@@ -201,11 +201,11 @@ if __name__ == '__main__':
                     confusion_all[gt_1d[idx], out_1d[idx]] += 1
 
                 meanIU, pixelAccuracy, meanAccuracy, classAccuracy, meanIU0, meanIU1 = calculate_Accuracy(confusion)
-                logger.record('test', epoch, cnt, 0, meanIU, pixelAccuracy, meanAccuracy, classAccuracy, meanIU0, meanIU1, epoch*len(test_dataset)+cnt)
+                logger.recordTest(epoch, idx, tag, meanIU, pixelAccuracy, meanAccuracy, classAccuracy, final_diff, meanIU0, meanIU1)
 
             final_diff_mean = final_diff_all / float(cnt)
             meanIU, pixelAccuracy, meanAccuracy, classAccuracy, meanIU0, meanIU1 = calculate_Accuracy(confusion_all)
-            logger.summary(meanIU, pixelAccuracy, meanAccuracy, classAccuracy, meanIU0, meanIU1)
+            logger.summary(meanIU, pixelAccuracy, meanAccuracy, classAccuracy, final_diff_mean, meanIU0, meanIU1)
 
     logger.saveModel(net, params.n_epochs)
     logger.info('success')
