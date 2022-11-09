@@ -208,7 +208,7 @@ class ProposedModel(Model):
         loss.backward()
         self._optimizer.step()
 
-        out_np = out_gpu.cpu().detach().numpy()
+        out_np = target_out.cpu().detach().numpy() 
         out_np = np.squeeze(out_np)
         out_np = np.where(out_np > 0, 1, 0)
         ppi = out_np.astype(np.uint8)
