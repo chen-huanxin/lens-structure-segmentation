@@ -156,7 +156,7 @@ class Model():
                 (meanIU, pixelAccuracy, meanAccuracy, classAccuracy, meanIU0, meanIU1), confusion = self.evaluate(ppi, gt)
                 confusion_all += confusion
 
-                final_diff = self.getDiff(label, ppi)
+                final_diff = self.getDiff(label.numpy(), ppi)
                 final_diff_all += final_diff
 
                 self._logger.recordTest(epoch, idx, tag, meanIU, pixelAccuracy, meanAccuracy, classAccuracy, final_diff, meanIU0, meanIU1)
