@@ -12,7 +12,7 @@ from torch.nn import Module
 
 from parser_config import Parameters
 from logger import Logger
-from LevelSets.LevelSetCNN_RNN_STN import LevelSet_CNN_RNN_STN
+from levelsets.LevelSetCNN_RNN_STN import LevelSet_CNN_RNN_STN
 
 class Model():
     __metaclass__ = ABCMeta

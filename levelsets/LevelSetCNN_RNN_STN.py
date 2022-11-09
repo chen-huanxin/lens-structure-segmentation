@@ -4,9 +4,9 @@ from skimage import transform
 import numpy as np
 import os
 
-from LevelSets.LevelSetLoss import LevelSet_Loss
-from LevelSets.STNLoss import ShapePriorNet
-from LevelSets.GRU2DLoss import GRU2D
+from levelsets.LevelSetLoss import LevelSet_Loss
+from levelsets.STNLoss import ShapePriorNet
+from levelsets.GRU2DLoss import GRU2D
 
 class LevelSet_CNN_RNN_STN(object):
     def __init__(self):
